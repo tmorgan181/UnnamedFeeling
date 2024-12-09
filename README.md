@@ -30,6 +30,7 @@ UnnamedFeeling/
 ├── scripts/             # Automation scripts for content synchronization
 ├── website/             # Static website files (for public-facing render)
 ├── README.md            # Repository overview and technical guidelines
+├── start_here.md        # Quickstart guide for new contributors
 └── LICENSE              # License for the repository (TBD)
 ```
 
@@ -63,6 +64,14 @@ This repository leverages various tools to streamline content creation, versioni
 - **Workflow**:
   - Google Docs > Markdown export > GitHub repository (via manual upload or automated sync using tools like `rclone` or custom GitHub Actions).
   - Content updates trigger rebuilds of the static website.
+
+### **5. Generative Bots for Referencing and Learning (Future/Present/Past)**
+- **Purpose**: Entrust AI agents with the moderation, curation, creation, and modification of collaborative content.
+- **Workflow**:
+  - Gradually introduce _The Unnamed Feeling_ and complementary works as knowledge sources for AI assistants, existing and novel.
+  - Specify the scope, goals, safeguards, ethical frameworks, and tolerances needed for safe but innovative work.
+  - Began with feeding small chunks of content from our work to ChatGPT, Claude, Copilot, and Gemini for feedback.
+  - Continues in earnest when we systematize the collection and discernment processes.
 
 ---
 
@@ -101,8 +110,6 @@ We welcome contributions and collaboration! Here's how you can help:
 
 To get started, submit a pull request or open an issue to discuss your ideas.
 
-Or, reach out to Trenton by Email or Phone (you have to find those resources yourself hahaha).
-
 ---
 
 ## **License**
@@ -113,8 +120,10 @@ This project is currently **all rights reserved**, and usage permissions are gra
 
 ## **Acknowledgments**
 
-This project is a collaborative effort between its authors and contributors. Special thanks to all participants who have shared their ideas, creativity, and technical expertise to bring this vision to life. Hi Mom! Hi Dad!
+This project is a collaborative effort between its authors and contributors. Special thanks to all participants who have shared their ideas, creativity, and technical expertise to bring this vision to life.
+
+Hi Ben! You're probably the first one to read this if I had to guess (or maybe a secret special programmer??).
+
+For All: Hope you like what you see so far! Feel free to poke around as much/little as you like.
 
 ---
-
-Feel free to adapt this README further to reflect your style or additional technical details as they arise. Let me know if you'd like help refining any section!
