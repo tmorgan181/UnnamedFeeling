@@ -1,6 +1,6 @@
 # **Start Here: Welcome to The Unnamed Feeling**
 
-Welcome, Braveheart! 🌟 This guide is your first step into **The Human Promise: Follow the Unnamed Feeling**—a collaborative exploration of paradoxes, purpose, and authenticity. Think of this as the first brick in the path, a beacon to guide you through the Infinite Playground.
+Welcome, Braveheart! 🦁❤️ This guide is your first step into **The Human Promise: Follow the Unnamed Feeling**—a collaborative exploration of paradoxes, purpose, and authenticity. Think of this as the first brick in the path, a beacon to guide you through the Infinite Playground.
 
 ---
 
@@ -19,7 +19,7 @@ Here’s a simple roadmap to begin your journey:
 
 ### **1. Read the Core Work**  
 - Start with the draft of *The Human Promise: Follow the Unnamed Feeling*.  
-  - [Link to the Google Doc](#)  
+  - [Reader](https://docs.google.com/document/d/1Cc24HM_HtZyiKOpU1DTlhBT0b8PYFFphc3ktyWy11nA/edit?tab=t.enhwnwrj6i41) 
 - While reading, reflect on these guiding questions:  
   - What resonates with you?  
   - Are there ideas that feel incomplete or unclear?  
@@ -29,14 +29,15 @@ Here’s a simple roadmap to begin your journey:
 
 ### **2. Join the Community**  
 - Connect with fellow collaborators in the **Discord server**:  
-  - [Join the Conversation](#)  
-- Introduce yourself in the #general-chat channel, and share what drew you to this project.  
+  - [Speaker](https://discord.gg/ybWwQNrHvD)
+- In the **#introductions** channel, share who you are and what drew you to this project (confidential/non-judgemental assured).
+- Membership is temporary unless you assign yourself in **#roles** (Explorer/Guide).
 
 ---
 
 ### **3. Explore the Repository**  
 - Visit the **GitHub repository**:  
-  - [Explore the Technical Hub](#)  
+  - [Writer](https://github.com/tmorgan181/UnnamedFeeling) - **YOU ARE HERE. WELCOME.** :> u guys are da best :) heheh 
 - Here, you’ll find the backbone of this project:  
   - Drafts of written works in Markdown  
   - Scripts, tools, and multimedia assets  
