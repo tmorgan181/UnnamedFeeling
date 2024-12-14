@@ -1,0 +1,173 @@
+can you setup automation to enforce the rules we have outlined?
+ChatGPT said:
+ChatGPT
+Setting up automation to enforce the rules we've outlined can streamline your workflow and maintain consistency in your project. Here’s how you can do it using common tools and techniques like Git hooks, CI/CD pipelines, and lightweight tools like Prettier or Lint-Staged.
+
+1. Automate Formatting and Linting
+Tools like Prettier, ESLint, or similar can enforce consistent code and content formatting automatically.
+
+Setup Prettier for All Text Files
+Install Prettier:
+
+bash
+Copy code
+npm install --save-dev prettier
+Create a prettier.config.js:
+
+javascript
+Copy code
+module.exports = {
+    endOfLine: "lf",
+    trailingComma: "es5",
+    tabWidth: 4,
+    semi: true,
+    singleQuote: true,
+};
+Add a Prettier Script: Add this to your package.json:
+
+json
+Copy code
+"scripts": {
+    "format": "prettier --write ."
+}
+Run Prettier on Staged Files with Lint-Staged: Install and configure:
+
+bash
+Copy code
+npm install --save-dev lint-staged husky
+npx husky install
+npx husky add .husky/pre-commit "npx lint-staged"
+Add this to your package.json:
+
+json
+Copy code
+"lint-staged": {
+    "*.{js,ts,tsx,json,md}": "prettier --write"
+}
+What it does: Prettier will format only the files you're committing.
+2. Use Git Hooks for Local Enforcement
+Git hooks can enforce rules before commits or pushes. Use Husky to manage hooks.
+
+Install Husky:
+
+bash
+Copy code
+npm install --save-dev husky
+npx husky install
+Add Pre-Commit Hooks: Add this hook to .husky/pre-commit:
+
+bash
+Copy code
+# Run Prettier to format files
+npx lint-staged
+Add Pre-Push Hooks: Add this hook to .husky/pre-push:
+
+bash
+Copy code
+# Ensure all tests and linters pass before pushing
+npm test
+3. Add CI/CD Pipelines
+Use a CI/CD service like GitHub Actions or GitLab CI/CD to enforce these rules on the server.
+
+GitHub Actions Workflow
+Create .github/workflows/enforce-rules.yml:
+
+yaml
+Copy code
+name: Enforce Rules
+
+on: [push, pull_request]
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prettier and Lint
+        run: npm run format --check
+What it does: This workflow checks formatting on every push or pull request.
+4. Automate Branch Management
+To manage your artifacts and main branches:
+
+Use CI/CD to Keep artifacts Updated: Add a job in your CI/CD pipeline to merge main into artifacts automatically after successful checks.
+
+Example GitHub Action for this:
+
+yaml
+Copy code
+name: Sync Artifacts Branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+
+      - name: Fetch Artifacts Branch
+        run: git fetch origin artifacts
+
+      - name: Merge Main into Artifacts
+        run: |
+          git checkout artifacts
+          git merge main
+          git push origin artifacts
+What it does: Automatically updates artifacts with changes from main.
+Prevent Accidental Merge of artifacts into main:
+
+Protect the main branch via GitHub settings or add a rule in enforce-rules.yml:
+yaml
+Copy code
+- name: Prevent Artifacts Merge
+  if: github.ref == 'refs/heads/artifacts'
+  run: exit 1
+5. Track Large Files Separately
+For large raw files in artifacts, consider using Git LFS:
+
+Install Git LFS:
+
+bash
+Copy code
+git lfs install
+Track Large Files:
+
+bash
+Copy code
+git lfs track "*.png"
+git lfs track "Raw Data/*"
+Add .gitattributes for LFS:
+
+plaintext
+Copy code
+*.png filter=lfs diff=lfs merge=lfs -text
+Raw Data/* filter=lfs diff=lfs merge=lfs -text
+Commit the Changes:
+
+bash
+Copy code
+git add .gitattributes
+git commit -m "Configure Git LFS for large files"
+Summary
+By implementing these steps, your project will:
+
+Automatically enforce formatting and line-ending rules locally and in CI/CD.
+Keep artifacts and main branches organized with automation.
+Prevent accidental merging of non-essential files into main.
+Track and manage large files with Git LFS.
+Let me know which parts you'd like to prioritize, and I can guide you through the setup in more detail! 😊
