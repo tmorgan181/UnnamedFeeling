@@ -1,0 +1,27 @@
+# Ignore system and editor-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Ignore dependencies and build artifacts
+node_modules/
+dist/
+build/
+*.o
+*.class
+*.exe
+
+# Ignore temporary or sensitive files
+*.log
+*.tmp
+*.lock
+.env
+
+# Ignore large or binary files not essential for versioning
+*.zip
+*.tar
+*.gz
+*.jpg
+*.png
+*.gif

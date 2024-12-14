@@ -1,0 +1,14 @@
+# Root .editorconfig file
+root = true
+
+# Apply these settings to all files
+[*]
+charset = utf-8           # Use UTF-8 encoding
+end_of_line = lf          # Normalize to LF line endings
+insert_final_newline = true  # Ensure a single newline at EOF
+trim_trailing_whitespace = true  # Remove trailing whitespace
+
+# Specific rules for code files
+[*.{js,ts,tsx,py,html,css}]
+indent_style = space       # Use spaces for indentation
+indent_size = 4            # Use 4 spaces per indent level
