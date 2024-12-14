@@ -1,0 +1,104 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background gradient representing the infinite canvas -->
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+        </linearGradient>
+        <!-- Stardust effect -->
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- The infinite canvas -->
+    <rect width="800" height="600" fill="url(#bg)"/>
+
+    <!-- The spiral path representing Death's chase -->
+    <path d="M400 300 Q 500 200, 600 300 T 400 400 T 200 300 T 400 200" 
+          fill="none" 
+          stroke="#8a7d7d" 
+          stroke-width="2"
+          stroke-dasharray="5,5"/>
+
+    <!-- The Oak Tree -->
+    <g transform="translate(400,400) scale(0.8)">
+        <!-- Trunk -->
+        <path d="M-20 0 L20 0 L15 -100 L-15 -100 Z" 
+              fill="#4a3728"/>
+        <!-- Branches and Leaves -->
+        <g fill="#2d5a27">
+            <path d="M0 -100 L-50 -150 L0 -200 L50 -150 Z"/>
+            <path d="M-30 -120 L-80 -170 L-30 -220 L20 -170 Z"/>
+            <path d="M30 -120 L80 -170 L30 -220 L-20 -170 Z"/>
+        </g>
+    </g>
+
+    <!-- The Acorn -->
+    <g transform="translate(400,450)">
+        <ellipse cx="0" cy="0" rx="8" ry="10" fill="#5c4033"/>
+        <path d="M-8 0 Q0 5 8 0" fill="none" stroke="#3d2b22" stroke-width="1"/>
+    </g>
+
+    <!-- The Stream -->
+    <path d="M0 350 Q 200 300, 400 350 T 800 350"
+          fill="none"
+          stroke="#4a90e2"
+          stroke-width="3"
+          opacity="0.6"/>
+
+    <!-- The Bridge -->
+    <g transform="translate(400,350)">
+        <path d="M-50 0 Q0 -20 50 0" 
+              fill="none"
+              stroke="#8b7355"
+              stroke-width="5"/>
+    </g>
+
+    <!-- The Golden Path -->
+    <path d="M600 500 Q 500 400, 400 350"
+          stroke="#ffd700"
+          stroke-width="4"
+          fill="none"
+          opacity="0.7"/>
+
+    <!-- The transformation from horror to stardust -->
+    <g transform="translate(200,200)">
+        <path d="M0 0 Q50 -50 100 0 T 200 0" 
+              fill="none"
+              stroke="#ff4040"
+              stroke-width="2"
+              opacity="0.3"/>
+        <!-- Stardust overlay -->
+        <g filter="url(#glow)">
+            <circle cx="50" cy="-25" r="1" fill="#fff"/>
+            <circle cx="100" cy="0" r="1" fill="#fff"/>
+            <circle cx="150" cy="-25" r="1" fill="#fff"/>
+            <circle cx="200" cy="0" r="1" fill="#fff"/>
+        </g>
+    </g>
+
+    <!-- The Pinprick Star becoming a Galaxy -->
+    <g transform="translate(400,150)">
+        <!-- The original pinprick -->
+        <circle cx="0" cy="0" r="2" fill="#fff" filter="url(#glow)"/>
+        <!-- The expanding galaxy -->
+        <g opacity="0.5">
+            <circle cx="0" cy="0" r="30" fill="none" stroke="#fff" stroke-width="0.5"/>
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#fff" stroke-width="0.3"/>
+            <circle cx="0" cy="0" r="70" fill="none" stroke="#fff" stroke-width="0.2"/>
+        </g>
+    </g>
+
+    <!-- Scattered stars representing toska -->
+    <g filter="url(#glow)">
+        <circle cx="100" cy="100" r="1" fill="#fff"/>
+        <circle cx="700" cy="100" r="1" fill="#fff"/>
+        <circle cx="300" cy="500" r="1" fill="#fff"/>
+        <circle cx="600" cy="400" r="1" fill="#fff"/>
+    </g>
+</svg>
